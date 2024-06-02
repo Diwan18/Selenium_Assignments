@@ -1,5 +1,7 @@
 package week1.day1;
 
+import java.util.Iterator;
+
 public class IsPrime {
 
 	public static void main(String[] args) {
@@ -10,21 +12,23 @@ public class IsPrime {
 		
 		
 		
-		for (int i = 1 ; i<= n ; i++) {
+		for (int i = 2 ; i<= n ; i++) 
+		{
+			int flag = 0 ;
 			
-			if (i>0 & i <=3){
-				System.out.println("The given number" + i + "is prime number");
+			for ( int j= 2 ; j < i ; j++) {
+				
+				if (i%j == 0) {
+					
+					flag = 1;
+					break;
+				}
+				
+				
 				
 			}
-			
-			else if (i%2 == 0) {
-				System.out.println("The number" + i + "is not a prime number ");
-			}
-			
-			else 
-			{
-					System.out.println(i + "Is a prime number ");
-				
+			if (flag == 0) {
+				System.out.println(i + "Is a prime number");
 			}
 			
 			
