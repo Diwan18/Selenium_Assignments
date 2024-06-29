@@ -2,22 +2,39 @@ package week5Assignments.LeafTaps;
 
 
 	
-	import java.time.Duration;
+	import java.io.IOException;
+import java.time.Duration;
 
 	import org.openqa.selenium.By;
 	import org.openqa.selenium.WebElement;
 	import org.openqa.selenium.chrome.ChromeDriver;
-	import org.testng.annotations.Test;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 	public class EditLead extends BaseClass {
+		
+		@DataProvider(name="getValue")
+		public String[][] data() throws IOException{
+			
 
-		@Test
-		public  void editLead() {
+			
+			return ExcelSheet2.readexcel();
+			
+			
+			
+		}
+		
+		
+		
+		@Test(dataProvider="getValue")
+
+		
+		public  void editLead(String phNo) {
 
 			driver.findElement(By.linkText("Leads")).click();
 			driver.findElement(By.linkText("Find Leads")).click();
 			driver.findElement(By.xpath("//span[text()='Phone']")).click();
-			driver.findElement(By.xpath("//input[@name='phoneNumber']")).sendKeys("99");
+			driver.findElement(By.xpath("//input[@name='phoneNumber']")).sendKeys(phNo);
 			driver.findElement(By.xpath("//button[text()='Find Leads']")).click();
 			try {
 				Thread.sleep(2000);
