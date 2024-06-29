@@ -10,7 +10,7 @@ public class ExcelAssignment {
 	public static String[][]ReadExcel() throws IOException {
 		// TODO Auto-generated method stub
 		//step 1- setup the path of the workbook
-				XSSFWorkbook wb=new XSSFWorkbook("./CreateLeads/ExcelSheetAssignment.xlsx");
+				XSSFWorkbook wb=new XSSFWorkbook("./CreateLeads/ExcelSheetAssignment1.xlsx");
 				
 				//step 2
 				//wb.getSheet("Leads"); //sheet name
